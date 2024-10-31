@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative; /* To position the loader absolutely */
+}
+
+img {
+    width: 220px;
+    margin-bottom: 10px; /* Adjusted margin to bring the logo closer */
+}
+
+.input-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-label input {
+    margin-left: 10px;
+    flex: 1;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1;
+    padding-right: 30px; /* Space for the eye icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+    font-size: 18px;
+    line-height: 1; /* Adjust to align with the input */
+}
+
+.toggle-password.bold {
+    font-weight: bold;
+}
+
+.loading .loader {
+    display: block;
+}
+
+.loading label, .loading .button {
+    display: none;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+.button {
+    margin-top: 10px; /* Increased margin for spacing */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 5px;
+    border: 1px solid black; /* Black border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Green glow effect */
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}

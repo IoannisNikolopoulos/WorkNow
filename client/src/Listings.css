@@ -1,0 +1,292 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    line-height: 1.5;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* General Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it covers the full height */
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+/* Sticky Navigation Bar */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    position: sticky; /* Stick the navbar at the top of the page */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Scroll-to-Top Button */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 100; /* Place it on top of other content */
+    border: none;
+    outline: none;
+    background-color: #04AA6D;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+/* Adjust the main content to avoid overlap with the sticky navbar */
+.listings {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 1200px;
+    margin: auto; /* Adjusted margin to account for fixed navbar */
+    margin-top: 300px;
+}
+
+
+.search-bar {
+    margin-bottom: 20px;
+    margin-right: 15px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Scrollable Listings Container */
+.listings-container {
+    max-height: 70vh; /* Set the maximum height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Add some padding to the right to avoid overlapping the scrollbar */
+    margin-top: 20px; /* Space between the top and the listings */
+}
+
+/* Hide the default scrollbar (optional) */
+.listings-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.listings-container::-webkit-scrollbar-thumb {
+    background-color: #04AA6D; /* Scrollbar color */
+    border-radius: 10px; /* Rounded scrollbar */
+}
+
+.listings-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Background of the scrollbar track */
+}
+
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusted for responsiveness */
+    gap: 20px;
+}
+
+.listing-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.listing-card.connected {
+    border-left: 5px solid green; /* Indicate connected professionals */
+}
+
+.listing-card.not-connected {
+    border-left: 5px solid red; /* Indicate not connected professionals */
+}
+
+.listing-card:hover {
+    transform: scale(0.99);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Green glow effect */
+}
+
+.button-apply {
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    margin-right: -10px;
+}
+
+.button-apply:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Green glow effect */
+}
+
+.post-listing {
+    margin-bottom: 20px;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.post-listing h3 {
+    margin-bottom: 10px;
+}
+
+.post-listing input,
+.post-listing textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.post-listing textarea {
+    height: 100px;
+    resize: none;
+}
+
+.post-listing button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post-listing button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 800px) {
+    .topnav a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .listings {
+        width: 95%;
+        padding: 15px;
+        margin: 100px auto 20px auto; /* More margin to avoid overlap with navbar */
+    }
+
+    .search-bar input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .listings-grid {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .listing-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .button-apply {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .post-listing {
+        padding: 15px;
+    }
+
+    .post-listing input,
+    .post-listing textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .post-listing button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+.listing-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.button-delete {
+    background-color: #e74c3c;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-delete:hover {
+    background-color: #c0392b;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}

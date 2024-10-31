@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('workplace.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Adjusted width to ensure it fits within mobile screens */
+    max-width: 500px; /* Added max-width to prevent it from getting too wide */
+    margin: 20px; /* Add margin to prevent touching screen edges */
+}
+
+img {
+    width: 60%;
+    max-width: 220px; /* Restrict image size on larger screens */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 1.5em; /* Adjust font size for mobile */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add space between the buttons */
+    width: 100%;
+}
+
+.button {
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* Make buttons full-width on mobile */
+    max-width: 300px; /* Restrict the maximum width of the button */
+}
+
+@media (min-width: 600px) {
+    .button-container {
+        flex-direction: row; /* Horizontally align buttons on larger screens */
+    }
+
+    .button {
+        width: auto; /* Auto width for buttons on larger screens */
+    }
+}

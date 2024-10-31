@@ -1,0 +1,146 @@
+.view-user-admin {
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  max-height: 90vh; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.user-info h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.user-info p,
+.user-info pre.biography {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+  white-space: pre-wrap; /* Ensure line breaks are preserved */
+}
+
+p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.user-articles,
+.user-job-listings,
+.user-network {
+  margin-top: 30px;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.article-item,
+.job-item,
+.network-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.article-item:hover,
+.job-item:hover,
+.network-item:hover {
+  background-color: #f0f0f0;
+}
+
+.article-item h3,
+.job-item h3,
+.network-item h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.article-item p,
+.job-item p,
+.network-item p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.article-item small,
+.job-item small,
+.network-item small {
+  color: #888;
+  font-size: 12px;
+}
+
+.network-item {
+  display: flex;
+  align-items: center;
+}
+
+.network-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.network-item p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.delete-user-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.delete-user-button button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s, background-color 0.3s ease, box-shadow 0.3s;
+}
+
+.delete-user-button button:hover {
+  background-color: #c0392b;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}

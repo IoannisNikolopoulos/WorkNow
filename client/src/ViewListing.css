@@ -1,0 +1,56 @@
+.view-listing {
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.view-listing h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.view-listing p {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.view-listing p strong {
+  display: inline-block;
+  width: 150px;
+}
+
+/* Apply button styling */
+.button-apply-listing {
+  display: block;
+  width: 100%; /* Button width relative to the panel width */
+  max-width: 300px; /* Max width to prevent it from getting too large */
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.button-apply:hover {
+  background-color: #45a049;
+}
+
+.applied-button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: not-allowed; /* Indicate the button is disabled */
+  padding: 10px 20px;
+}

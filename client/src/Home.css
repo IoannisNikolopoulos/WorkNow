@@ -1,0 +1,334 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('workplace.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    position: relative;
+}
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    padding: 10px;
+    margin-top: 50px; /* Add space for the navbar */
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    flex-direction: column;
+}
+
+.sidebar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.timeline {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.articles-container {
+    height:150px; /* Set a height to restrict the container to one article */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.articles {
+    display: flex;
+    flex-direction: column; /* Arrange articles vertically */
+    width: 100%;
+}
+
+.articles .article {
+    height: 100%; /* Make each article fill the entire container height */
+    overflow-y: auto; /* Enable scrolling within the article if content exceeds height */
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px; /* Space between articles */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+img {
+    width: 100%;
+    max-width: 220px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.post-article {
+    margin-bottom: 20px;
+}
+
+.post-article textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+.media-input {
+    margin-bottom: 10px;
+}
+
+.button-post {
+    color: white;
+    width: 100%;
+    padding: 15px 24px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 0;
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+/* Add styles for user dropdown */
+.user-dropdown {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.user-container {
+    position: relative;
+    display: inline-block;
+}
+
+.user-button {
+    background-color: #333;
+    color: white;
+    padding: 3px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+}
+
+.user-button:hover {
+    background-color: #04AA6D;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1002;
+    right: calc(97% + 10px);
+    top: 0;
+}
+
+/* Ensure dropdown remains visible when hovering over either the button or the dropdown */
+.user-container:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 5px 1px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+.media-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 400px; /* Set the maximum height */
+    overflow-y: auto;  /* Enable vertical scrolling when content exceeds max-height */
+}
+
+.media-content img, .media-content video, .media-content audio {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar, .timeline {
+        width: 100%;
+        margin: 0;
+    }
+
+    .button-post {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .articles .article h3 {
+        font-size: 16px;
+    }
+
+    .button-note-interest {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
+
+.article-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.button-delete-article {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.3s, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-delete-article:hover {
+    background-color: #c0392b;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.button-delete-comment {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px;
+    transition: transform 0.3s, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-delete-comment:hover {
+    background-color: #c0392b;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.articles .article h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px; /* Adjust font size if needed */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articles .article h3:hover {
+    transform: scale(1.01); /* Slight zoom on hover */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow effect */
+    color: #04AA6D; /* Optional: Change text color on hover */
+}
+
+@media (max-width: 480px) {
+    .topnav a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .button-post {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .articles .article h3 {
+        font-size: 14px;
+    }
+
+    .button-note-interest {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+}

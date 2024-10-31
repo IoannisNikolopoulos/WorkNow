@@ -1,0 +1,122 @@
+/* Add styles for the "Remove Connection" button */
+.button-remove-connection {
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f44336; /* Red color */
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.button-remove-connection:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Red glow effect */
+}
+
+/* Existing styles */
+.view-user {
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.user-info h1 {
+  margin: 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+p strong {
+  display: inline-block;
+  width: 150px;
+}
+
+.button-start-discussion {
+  color: white;
+  padding: 10px 50px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.button-start-discussion:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Green glow effect */
+}
+
+.button-send-request {
+  color: white;
+  padding: 10px 19px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #008CBA;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.button-send-request:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); /* Blue glow effect */
+}
+
+.request-status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: green; /* Success message color */
+}
+
+.request-status.orange {
+  color: orange;
+}
+
+.button-send-request {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-send-request:hover {
+  background-color: #0056b3;
+}
+
+.button-request-sent {
+  background-color: #4CAF50; /* Same as liked button */
+  color: white;
+  cursor: not-allowed;
+}

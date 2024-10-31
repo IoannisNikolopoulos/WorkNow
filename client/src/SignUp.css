@@ -1,0 +1,215 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    line-height: 1.5;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive Container */
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    min-height: 300px; /* Ensure enough height for centering */
+    position: relative; /* Needed for absolute positioning of loader */
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+
+img {
+    width: 80%;
+    max-width: 220px;
+    margin-bottom: 10px;
+}
+
+.loader {
+    --color: black;
+    --size-mid: 6vmin;
+    --size-dot: 1.5vmin;
+    --size-bar: 0.4vmin;
+    --size-square: 3vmin;
+    display: block;
+    position: absolute;
+    top: 60%; /* Adjust this value to move the loader down */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center loader exactly */
+    width: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.loader::before, .loader::after {
+    content: '';
+    position: absolute;
+    width: var(--size-square);
+    height: var(--size-square);
+    background: var(--color);
+    animation: loader-5 0.8s infinite ease-in-out;
+    opacity: 0;
+}
+
+.loader.--5::before {
+    left: calc(50% - 1vmin);
+    top: calc(50% - 3vmin);
+}
+
+.loader.--5::after {
+    left: calc(50% + 1vmin);
+    top: calc(50% - 1vmin);
+    animation-delay: 0.2s;
+}
+
+@keyframes loader-5 {
+    0%, 88%, 100% {
+        opacity: 0;
+    }
+
+    0% {
+        transform: translateY(-6vmin);
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    33%, 88% {
+        transform: translateY(3vmin);
+    }
+}
+
+.button {
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid black;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: flex;
+    align-items: center; /* Center text vertically with input */
+    margin: 10px 0;
+    width: 100%;
+    justify-content: space-between; /* Distribute space between label and input */
+}
+
+label span {
+    flex: 1;
+    text-align: right; /* Align label text to the right */
+    margin-right: 10px;
+}
+
+label input {
+    flex: 2;
+    text-align: left; /* Ensure the input text is aligned to the left */
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-container input {
+    width: calc(100% - 20px); /* Adjust width to accommodate the eye icon */
+    box-sizing: border-box;
+    padding-right: 20px; /* Space for the eye icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Adjust the position to be inside the input field */
+    top: 39%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-password.bold {
+    font-weight: bold;
+}
+
+/* Error styles */
+input.error {
+    border: 1px solid red;
+    background-color: #ffe6e6;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+.error-message {
+    color: red;
+}
+
+.account-created {
+    color: green;
+    font-weight: bold;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    img {
+        width: 70%;
+        max-width: 180px;
+    }
+
+    label {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label span,
+    label input {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
